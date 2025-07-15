@@ -48,6 +48,12 @@ async function getWeatherData(cityValue) {
       .map((detail) => `<div>${detail}</div>`)
       .join("");
   } catch (error) {
-    console.error("Error fetching weather data:", error.message);
+    weatherDataEl.querySelector(".icon").innerHTML = "";
+
+    weatherDataEl.querySelector(".temperature").textContent = "";
+
+    weatherDataEl.querySelector(".description").textContent = "An error happened, please try again later";
+
+    weatherDataEl.querySelector(".details").innerHTML = "";
   }
 }
